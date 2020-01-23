@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+message FeedHeaderStatic {
+    // Version of the feed specification.
+    // The current version is 0.0.1
+    string version = 1;
+
+    // Id of the agency providing this information.
+    string agency = 2;
+    repeated Tag tags = 3;
+  
+    // This timestamp identifies the moment when the content of this feed has been
+    // created (time at the server). In POSIX time (i.e., number of seconds since
+    // January 1st 1970 00:00:00 UTC).
+    uint64 lastUpdateTimestamp = 4;
+}
+
+message Tag {
+    string name = 1;
+    string value = 2;
+}

@@ -1,0 +1,76 @@
+
+syntax = "proto3";
+
+package atc;
+
+import "FeedHeader.proto";
+
+option java_package = "io.pravah.transit.atc";
+
+message FeedMessage {
+    FeedHeader header = 1;
+    repeated FeedAirport airports = 2;
+}
+  
+message FeedAirport {
+    string id = 1;
+    string name = 2;
+    repeated Terminal terminals = 3;
+
+    uint64 timestamp = 9;
+}
+  
+message Terminal {
+    string name = 1;
+    repeated Flight flightUpdates = 2;
+}
+  
+message Flight {
+    AirportNode from = 1;
+    repeated AirportNode via = 2;
+    AirportNode to = 3;
+    AirlineInfo info = 4;
+}
+
+message AirlineInfo {
+    string code = 1;
+    string id = 2;              // alias for flight number
+    string name = 3;
+}
+    
+message AirportNode {
+    string id = 1;              // alias for airport code   
+    string terminal = 2;
+    string gate = 3;
+    Time arrivalTime = 4;
+    Time departureTime = 5;
+    Status status = 6;
+    
+    // Could be send to static data.
+    string name = 100;
+    string location = 101;        // could be city name
+}
+
+message Time {
+    uint64 scheduled = 1;
+    uint64 actual = 2;
+}
+  
+message Status {
+    enum FlightStatus {
+        SCHEDULED = 0;
+        DELAYED = 1;
+        EARLY = 2;
+        CANCELLED = 3;
+        ON_TIME = 4;
+        GATE_OPEN = 5;
+        FINAL_CALL = 6;
+        GATE_CLOSED = 7;
+        DEPARTED = 8;
+        IN_AIR = 9;
+        LANDED = 10;
+        ARRIVED = 11;
+    }
+    FlightStatus flightStatus = 1;
+    string message = 2;
+}
