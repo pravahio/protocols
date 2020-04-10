@@ -1,0 +1,100 @@
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+package health_hospital_capacity;
+
+import "FeedHeader.proto";
+
+option java_package = "io.pravah.health.hospital_capacity";
+
+message FeedMessage {
+    // Metadata
+    FeedHeader header = 1;
+
+    repeated Hospital hospitals = 2;
+}
+
+message Hospital {
+    Detail detail = 1;
+    Infrastructure infrastructure = 2;
+    Staff staff = 3;
+    repeated Equipment equipments = 4;
+}
+
+message Detail {
+    enum Ownership {
+        UNKNOWN = 0;
+        PUBLIC = 1;
+        PRIVATE = 2;
+    }
+    enum Speciality {
+        GENERAL = 1;
+        MATERNITY = 2;
+        COVID = 3;
+        // More can be added.
+    }
+    string uuid = 1;
+    string name = 2;
+    Location location = 3;
+    Ownership ownership = 4;
+    Speciality speciality = 5;
+}
+
+message Location {
+    string address = 1;                         // Complete address string
+    float latitude = 2;
+    float longitude = 3;
+}
+
+message Infrastructure {
+    repeated Ward wards = 1;                    // len(icuWards) == # of wards
+}
+
+message Ward {
+    enum Type {
+        UNKNOWN = 0;
+        ICU = 1;
+        EMERGENCY = 2;
+        GENERAL = 3;
+        ISOLATION = 4;                          // Same as Quarantine.
+    }
+    string uuid = 1;                            // Should uniquely identify an ICU across the hospitals.
+    repeated Type types = 2;                    // A ward can be ISOLATED and ICU (eg for COVID cases)
+    uint32 numberOfBeds = 3;
+    uint32 numberOfOccupiedBeds = 4;            // Number of people can be derived assuming one person, one bed.
+}
+
+message Staff {
+    uint32 totalDoctors = 1;
+    uint32 totalNurses = 2;
+    uint32 totalSupportStaff = 3;
+    uint32 otherStaff = 4;
+}
+
+message Equipment {
+    enum Type {
+        UNKNOWN = 0;
+        N95MASK = 1;
+        VENTILATOR = 2;
+        GLOVES = 3;
+        FACE_SHIELD = 4;
+    }
+    string uuid = 1;
+    Type type = 2;
+    uint32 quantityTotal = 3;                   
+    uint32 quantityInUse = 4;
+    uint32 extraQuantityRequired = 5;
+    repeated string tags = 6;                   // Tags like sub category of ventilator etc.
+}
