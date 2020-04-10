@@ -27,13 +27,13 @@ message FeedMessage {
 }
 
 message Hospital {
-    Detail detail = 1;
+    Details details = 1;
     Infrastructure infrastructure = 2;
     Staff staff = 3;
     repeated Equipment equipments = 4;
 }
 
-message Detail {
+message Details {
     enum Ownership {
         UNKNOWN = 0;
         PUBLIC = 1;
@@ -74,6 +74,7 @@ message Ward {
     repeated Type types = 2;                    // A ward can be ISOLATED and ICU (eg for COVID cases)
     uint32 numberOfBeds = 3;
     uint32 numberOfOccupiedBeds = 4;            // Number of people can be derived assuming one person, one bed.
+    uint32 extraBedsRequired = 5;
 }
 
 message Staff {
