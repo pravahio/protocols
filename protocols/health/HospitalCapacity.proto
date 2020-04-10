@@ -40,9 +40,9 @@ message Detail {
         PRIVATE = 2;
     }
     enum Speciality {
-        GENERAL = 1;
-        MATERNITY = 2;
-        COVID = 3;
+        GENERAL = 0;
+        MATERNITY = 1;
+        COVID = 4;
         // More can be added.
     }
     string uuid = 1;
@@ -95,6 +95,6 @@ message Equipment {
     Type type = 2;
     uint32 quantityTotal = 3;                   
     uint32 quantityInUse = 4;
-    uint32 extraQuantityRequired = 5;
+    uint32 extraQuantityRequired = 5;           // How much extra quantity is required.
     repeated string tags = 6;                   // Tags like sub category of ventilator etc.
 }
