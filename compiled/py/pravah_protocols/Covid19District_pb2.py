@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='health_covid_district',
   syntax='proto3',
   serialized_options=b'\n\037io.pravah.health.covid_district',
-  serialized_pb=b'\n\x1chealth/Covid19District.proto\x12\x15health_covid_district\x1a\x10\x46\x65\x65\x64Header.proto\"]\n\x0b\x46\x65\x65\x64Message\x12\x1b\n\x06header\x18\x01 \x01(\x0b\x32\x0b.FeedHeader\x12\x31\n\tcountries\x18\x02 \x03(\x0b\x32\x1e.health_covid_district.Country\"r\n\x07\x43ountry\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12+\n\x05stats\x18\x02 \x01(\x0b\x32\x1c.health_covid_district.Stats\x12,\n\x06states\x18\x03 \x03(\x0b\x32\x1c.health_covid_district.State\"v\n\x05State\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12+\n\x05stats\x18\x02 \x01(\x0b\x32\x1c.health_covid_district.Stats\x12\x32\n\tdistricts\x18\x03 \x03(\x0b\x32\x1f.health_covid_district.District\"y\n\x08\x44istrict\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12+\n\x05stats\x18\x02 \x01(\x0b\x32\x1c.health_covid_district.Stats\x12\x32\n\thospitals\x18\x03 \x03(\x0b\x32\x1f.health_covid_district.Hospital\"w\n\x08Hospital\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12+\n\x05stats\x18\x02 \x01(\x0b\x32\x1c.health_covid_district.Stats\x12\x30\n\x08patients\x18\x03 \x03(\x0b\x32\x1e.health_covid_district.Patient\"|\n\x05Stats\x12\x1a\n\x12totalPositiveCases\x18\x01 \x01(\r\x12\x1b\n\x13\x61\x63tivePositiveCases\x18\x02 \x01(\r\x12\x12\n\ncuredCases\x18\x03 \x01(\r\x12\x12\n\ndeathCases\x18\x04 \x01(\r\x12\x12\n\notherCases\x18\x05 \x01(\r\"f\n\x07Patient\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x0b\n\x03\x61ge\x18\x02 \x01(\r\x12\x0e\n\x06gender\x18\x03 \x01(\t\x12\x16\n\x0einfectedOnDate\x18\x04 \x01(\x04\x12\x18\n\x10infectedFromUUID\x18\x05 \x03(\tB!\n\x1fio.pravah.health.covid_districtb\x06proto3'
+  serialized_pb=b'\n\x1chealth/Covid19District.proto\x12\x15health_covid_district\x1a\x10\x46\x65\x65\x64Header.proto\"]\n\x0b\x46\x65\x65\x64Message\x12\x1b\n\x06header\x18\x01 \x01(\x0b\x32\x0b.FeedHeader\x12\x31\n\tcountries\x18\x02 \x03(\x0b\x32\x1e.health_covid_district.Country\"r\n\x07\x43ountry\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12+\n\x05stats\x18\x02 \x01(\x0b\x32\x1c.health_covid_district.Stats\x12,\n\x06states\x18\x03 \x03(\x0b\x32\x1c.health_covid_district.State\"v\n\x05State\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12+\n\x05stats\x18\x02 \x01(\x0b\x32\x1c.health_covid_district.Stats\x12\x32\n\tdistricts\x18\x03 \x03(\x0b\x32\x1f.health_covid_district.District\"y\n\x08\x44istrict\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12+\n\x05stats\x18\x02 \x01(\x0b\x32\x1c.health_covid_district.Stats\x12\x32\n\thospitals\x18\x03 \x03(\x0b\x32\x1f.health_covid_district.Hospital\"w\n\x08Hospital\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12+\n\x05stats\x18\x02 \x01(\x0b\x32\x1c.health_covid_district.Stats\x12\x30\n\x08patients\x18\x03 \x03(\x0b\x32\x1e.health_covid_district.Patient\"\xb9\x01\n\x05Stats\x12\x1a\n\x12totalPositiveCases\x18\x01 \x01(\r\x12\x1b\n\x13\x61\x63tivePositiveCases\x18\x02 \x01(\r\x12\x12\n\ncuredCases\x18\x03 \x01(\r\x12\x12\n\ndeathCases\x18\x04 \x01(\r\x12\x12\n\notherCases\x18\x05 \x01(\r\x12\x1b\n\x13totalTestsConducted\x18\x06 \x01(\r\x12\x1e\n\x16totalPeopleQuarantined\x18\x07 \x01(\r\"f\n\x07Patient\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x0b\n\x03\x61ge\x18\x02 \x01(\r\x12\x0e\n\x06gender\x18\x03 \x01(\t\x12\x16\n\x0einfectedOnDate\x18\x04 \x01(\x04\x12\x18\n\x10infectedFromUUID\x18\x05 \x03(\tB!\n\x1fio.pravah.health.covid_districtb\x06proto3'
   ,
   dependencies=[FeedHeader__pb2.DESCRIPTOR,])
 
@@ -286,6 +286,20 @@ _STATS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='totalTestsConducted', full_name='health_covid_district.Stats.totalTestsConducted', index=5,
+      number=6, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='totalPeopleQuarantined', full_name='health_covid_district.Stats.totalPeopleQuarantined', index=6,
+      number=7, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -298,8 +312,8 @@ _STATS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=648,
-  serialized_end=772,
+  serialized_start=649,
+  serialized_end=834,
 )
 
 
@@ -357,8 +371,8 @@ _PATIENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=774,
-  serialized_end=876,
+  serialized_start=836,
+  serialized_end=938,
 )
 
 _FEEDMESSAGE.fields_by_name['header'].message_type = FeedHeader__pb2._FEEDHEADER

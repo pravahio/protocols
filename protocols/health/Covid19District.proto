@@ -73,6 +73,8 @@ message Stats {
     uint32 curedCases = 3;              // Patients cured and released from quarantine.
     uint32 deathCases = 4;              // :(
     uint32 otherCases = 5;              // Migrated / Any other.
+    uint32 totalTestsConducted = 6;
+    uint32 totalPeopleQuarantined = 7;
 }
 
 // privacy by design.
