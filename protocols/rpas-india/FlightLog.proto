@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+message Log {
+    FlightLog flightLog = 1;
+    bytes signature = 2;
+}
+
+message FlightLog {
+    enum EntryType {
+        UNKNOWN = 0;
+        TAKEOFF_ARM = 1;
+        GEOFENCE_BREACH = 2;
+        TIME_BREACH = 3;
+        LAND_DISARM = 4;
+    }
+    message LogEntry {
+        EntryType entryType = 1;
+        uint64 timestamp = 2;
+        double longitude = 3;
+        double latitude = 4;
+        double altitude = 5;
+        bytes crc = 6;
+    }
+
+    string permissionArtefact = 1;
+    repeated LogEntry logEntries = 2;
+    bytes previousLogHash = 3;
+}
+

@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="pravah_protocols",
-    version="0.0.1",
+    version="0.0.7",
     author="Abhishek Upperwal",
     author_email="mesh@soket.in",
     description="Proto generated for all protocols",
